@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe by subhradip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="newgame()">
+    <h1 class="text">Tic Tac Toe</h1>
+    <div class="text1" id="message">Resut</div>
+    <table class="shift">
+        <tr>
+            <td id="s1" class="box" onclick="nextMove(this);"></td>
+            <td id="s2" class="box" onclick="nextMove(this);"></td>
+            <td id="s3" class="box" onclick="nextMove(this);"></td>
+        </tr>
+        <tr>
+            <td id="s4" class="box" onclick="nextMove(this);"></td>
+            <td id="s5" class="box" onclick="nextMove(this);"></td>
+            <td id="s6" class="box" onclick="nextMove(this);"></td>
+        </tr>
+        <tr>
+            <td id="s7" class="box" onclick="nextMove(this);"></td>
+            <td id="s8" class="box" onclick="nextMove(this);"></td>
+            <td id="s9" class="box" onclick="nextMove(this);"></td>
+        </tr>
+    </table>  
+    <button type="button" onclick="newgame()"class="but">Enter a new game</button>
+    <script type="text/javascript" src="game.js"></script>  
+</body>
+</html>
