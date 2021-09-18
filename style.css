@@ -62,21 +62,20 @@ table tr td:hover{
 }
 @media (min-width: 360px) and (max-width:640px){
     .but{
-        top : 82%;
+        top : 90%;
         left: 44%;
     }
     .text{
         font-size: 30px;
-        top: 5%;
+        top: 1%;
     }
     .text1{
-        position:absolute;
-        top: 37%;
+        top: 44%;
         left: 45%;
     }
     table{
         position: absolute;
-        top: 12%;
-        left:20%
+        top: 20%;
+        left:50px;
     }
 }
