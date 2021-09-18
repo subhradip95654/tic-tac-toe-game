@@ -60,7 +60,7 @@ table tr td:hover{
     color: black;
     font-size: 30px;
 }
-@media (min-width: 360px) and (max-width:640px){
+@media (min-width: 360px){
     .but{
         top : 90%;
         left: 44%;
