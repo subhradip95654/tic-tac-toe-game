@@ -1,112 +1,82 @@
-function newgame()
-{
-    for (var i = 1; i<= 9; i = i + 1)
-    {
-        clearBox(i);
-    }
-
-    document.turn = "X";
-    if (Math.random()< 0.5)
-    {
-        document.turn = "O";
-    }
-    document.winner = null;
-    setMessage(document.turn + " gets to start.");
-    document.getElementById("s1").style.color = "#3FC80E ";
-    document.getElementById("s2").style.color = "#3FC80E ";
-    document.getElementById("s3").style.color = "#3FC80E ";
-    document.getElementById("s4").style.color = "#3FC80E ";
-    document.getElementById("s5").style.color = "#3FC80E ";
-    document.getElementById("s6").style.color = "#3FC80E ";
-    document.getElementById("s7").style.color = "#3FC80E ";
-    document.getElementById("s8").style.color = "#3FC80E ";
-    document.getElementById("s9").style.color = "#3FC80E ";
-}
-
-function setMessage(msg)
-{
-    document.getElementById("message").textContent = msg;
-}
-
-function nextMove(square)
-{
-    if (document.winner != null)
-    {
-        setMessage(document.winner + " Already Won the Game!" );
-    }
-    else if (square.textContent == "")
-    {
-        square.textContent = document.turn;
-        switchTurn();
-    }
-    else
-    {
-        setMessage("choose another square");
-    }
-}
-
-function switchTurn()
-{
-    if(checkForWinner(document.turn))
-    {
-        setMessage("Congratulations " + document.turn + "! You Win!");
-        document.winner = document.turn;
-    }
-    else
-    if(CheckforTie())
-    {
-        setMessage("TIE  .  Play again");
-    }
-    else if (document.turn == "X")
-    {
-        document.turn ="O";
-        setMessage("It's " + document.turn + "'s turn!");
-    }
-    else
-    {
-        document.turn ="X";
-        setMessage("It's " + document.turn + "'s turn!");
-    }
-}
-
-function checkForWinner(move)
-{
-    var result = false;
-    if(checkRow(1,2,3, move) || checkRow(4,5,6, move) || checkRow(7,8,9, move) ||checkRow(1,4,7, move) ||checkRow(2,5,8, move) ||checkRow(3,6,9, move) ||checkRow(1,5,9, move) ||checkRow(3,5,7, move))
-       {
-        result = true;
-       }
-        return result;
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #eec0c6, #7ee8fa,#a88beb);
 
 }
-
-function checkRow(a,b,c, move)
+table
 {
-    var result = false;
-    if (getBox(a)== move && getBox(b)== move && getBox(c)== move)
-    {
-    	result = true;
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0px;
+    margin: 120px auto;
+    background-color:#272724;
+}
+table tr td{
+    width: 78px;
+    height: 78px;
+    border: 4px solid rgba(255,255,255,0.95);
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+table tr td:hover{
+    background-color: #2c3531;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.but
+{
+    position:absolute;
+    width: 200px;
+    height: 50px;
+    background-color: #2c3531;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    transform: translate(-50%,-50%);
+    left: 50.1%;
+    top: 60%;
+}
+.text
+{
+    text-align: center;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position:absolute;
+    font-weight: bolder;
+    color: black;
+    font-size: 60px;
+}
+.text1
+{
+    text-align: center;
+    top: 20%;
+    left: 50%;
+    transform: translate(-45%,-200%);
+    position:absolute;
+    font-weight: bolder; 
+    color: black;
+    font-size: 30px;
+}
+@media (max-width: 640px){
+    .but{
+        top : 90%;
+        left: 48%;
     }
-    	return result;
-}
-
-function getBox(number)
-{
-  return document.getElementById("s" + number).textContent;
-}
-
-function clearBox(number)
-{
-    document.getElementById("s" + number).textContent = "";
-}
-
-function CheckforTie()
-{
-    for(var i=1;i<10;i++)
-	{
-
-  		if(getBox(i)=="")
-   		return false;
-	}
-return true;
+    .text{
+        font-size: 30px;
+        top: 1%;
+    }
+    .text1{
+        font-size: 15px;
+        top: 20%;
+        left: 47%;
+    }
+    table{
+        position: absolute;
+        top: 20%;
+        left:50px;
+    }
 }
