@@ -60,3 +60,23 @@ table tr td:hover{
     color: black;
     font-size: 30px;
 }
+@media (max-width: 640px){
+    .but{
+        top : 90%;
+        left: 48%;
+    }
+    .text{
+        font-size: 30px;
+        top: 1%;
+    }
+    .text1{
+        font-size: 15px;
+        top: 20%;
+        left: 47%;
+    }
+    table{
+        position: absolute;
+        top: 20%;
+        left:50px;
+    }
+}
